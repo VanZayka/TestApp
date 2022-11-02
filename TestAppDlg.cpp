@@ -14,6 +14,8 @@
 #define new DEBUG_NEW
 #endif
 #include <iostream>
+#define TIMERCOUNT 100
+
 using namespace std;
 
 
@@ -99,6 +101,8 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialogEx)
 	ON_BN_CLICKED(b_m, &CMainDlg::OnBnClickedm)
 	ON_BN_CLICKED(b_d, &CMainDlg::OnBnClickedd)
 	ON_BN_CLICKED(b_u, &CMainDlg::OnBnClickedu)
+	ON_BN_CLICKED(IDC_BTN_startgame, &CMainDlg::OnBnClickedBtnstartgame)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -137,6 +141,7 @@ BOOL CMainDlg::OnInitDialog()
 	m_sFileIn = "input.txt";
 	m_sFileOut = "output.txt";
 	UpdateData(FALSE); //AS false - из переменнных, на экран. true - с экрана в переменные
+	//SetTimer(TIMER)
 
 	return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
 }
@@ -345,3 +350,20 @@ void CMainDlg::OnBnClickedresult()
 // КРЕСТИКИ / НОЛИКИ
 
 
+
+
+void CMainDlg::OnBnClickedBtnstartgame()
+{
+	SetTimer(TIMERCOUNT, 1000, NULL);
+
+}
+
+
+void CMainDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	if (nIDEvent == TIMERCOUNT)
+	{
+
+	}
+	CDialogEx::OnTimer(nIDEvent);
+}

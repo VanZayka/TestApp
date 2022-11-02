@@ -57,4 +57,6 @@ public:
 	afx_msg void OnBnClickedm();
 	afx_msg void OnBnClickedd();
 	afx_msg void OnBnClickedu();
+	afx_msg void OnBnClickedBtnstartgame();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };

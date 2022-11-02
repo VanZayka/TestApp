@@ -16,6 +16,7 @@
 #define IDC_BTN_GTFILEIN2               1005
 #define IDC_BTN_GTFILEOUT               1005
 #define IDC_BTN_GTPROCESS               1006
+#define IDC_BTN_startgame               1007
 #define b_2                             1010
 #define b_3                             1011
 #define b_4                             1012
@@ -30,8 +31,10 @@
 #define b_m                             1021
 #define b_d                             1022
 #define b_u                             1023
+#define b_ko_1                          1023
 #define b_reset                         1024
 #define b_10                            1025
+#define b_u2                            1026
 
 // Next default values for new objects
 // 
