@@ -95,6 +95,10 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialogEx)
 	ON_BN_CLICKED(b_reset, &CMainDlg::OnBnClickedreset)
 	ON_BN_CLICKED(b_10, &CMainDlg::OnBnClicked10)
 	ON_BN_CLICKED(b_p, &CMainDlg::OnBnClickedp)
+	ON_BN_CLICKED(b_result, &CMainDlg::OnBnClickedresult)
+	ON_BN_CLICKED(b_m, &CMainDlg::OnBnClickedm)
+	ON_BN_CLICKED(b_d, &CMainDlg::OnBnClickedd)
+	ON_BN_CLICKED(b_u, &CMainDlg::OnBnClickedu)
 END_MESSAGE_MAP()
 
 
@@ -256,17 +260,17 @@ void CMainDlg::OnBnClickedBtnGtprocess()
 
 float a = 0;
 float b = 0;
-string s = "123456";
-void CMainDlg::OnBnClicked1() {	Calc_pole += "1";	UpdateData(false); }
-void CMainDlg::OnBnClicked2() { Calc_pole += "2";	UpdateData(false); }
-void CMainDlg::OnBnClicked3() { Calc_pole += "3";	UpdateData(false); }
-void CMainDlg::OnBnClicked4() { Calc_pole += "4";	UpdateData(false); }
-void CMainDlg::OnBnClicked5() { Calc_pole += "5";	UpdateData(false); }
-void CMainDlg::OnBnClicked6() { Calc_pole += "6";	UpdateData(false); }
-void CMainDlg::OnBnClicked7() { Calc_pole += "7";	UpdateData(false); }
-void CMainDlg::OnBnClicked8() { Calc_pole += "8";	UpdateData(false); }
-void CMainDlg::OnBnClicked9() { Calc_pole += "9";	UpdateData(false); }
-void CMainDlg::OnBnClicked0() { Calc_pole += "0";	UpdateData(false); }
+char s = '0';
+void CMainDlg::OnBnClicked1() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "1";	UpdateData(false); }
+void CMainDlg::OnBnClicked2() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "2";	UpdateData(false); }
+void CMainDlg::OnBnClicked3() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "3";	UpdateData(false); }
+void CMainDlg::OnBnClicked4() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "4";	UpdateData(false); }
+void CMainDlg::OnBnClicked5() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "5";	UpdateData(false); }
+void CMainDlg::OnBnClicked6() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "6";	UpdateData(false); }
+void CMainDlg::OnBnClicked7() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "7";	UpdateData(false); }
+void CMainDlg::OnBnClicked8() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "8";	UpdateData(false); }
+void CMainDlg::OnBnClicked9() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "9";	UpdateData(false); }
+void CMainDlg::OnBnClicked0() { if (s == 'r') { Calc_pole = "";	UpdateData(false); s = '0'; }Calc_pole += "0";	UpdateData(false); }
 void CMainDlg::OnBnClickedreset() { Calc_pole = "";	UpdateData(false); }
 void CMainDlg::OnBnClicked10() { Calc_pole += ".";	UpdateData(false); }
 
@@ -274,7 +278,7 @@ void CMainDlg::OnBnClickedp()
 {	
 	UpdateData(TRUE);
 	a = _ttof(Calc_pole);
-	a += a;
+	s = '+',
 	//Calc_pole.Format(_T("%f"), a);
 	//UpdateData(FALSE);
 	Calc_pole = "";	UpdateData(false);
@@ -287,3 +291,57 @@ void CMainDlg::OnBnClickedp()
 	//	Calc_pole += (string)i;
 	//}	
 }
+
+void CMainDlg::OnBnClickedm()
+{
+	UpdateData(TRUE);
+	a = _ttof(Calc_pole);
+	s = '-';
+	Calc_pole = "";	UpdateData(false);
+}
+void CMainDlg::OnBnClickedd()
+{
+	UpdateData(TRUE);
+	a = _ttof(Calc_pole);
+	s = '/';
+	Calc_pole = "";	UpdateData(false);
+}
+void CMainDlg::OnBnClickedu()
+{
+	UpdateData(TRUE);
+	a = _ttof(Calc_pole);
+	s = '*';
+	Calc_pole = "";	UpdateData(false);
+}
+void CMainDlg::OnBnClickedresult()
+{
+	b = _ttof(Calc_pole);
+	switch (s)
+	{
+	case '0':
+		break;
+	case '+':
+		Calc_pole.Format(_T("%f"), a + b);
+		UpdateData(FALSE); a = 0; b = 0; s = 'r';
+		break;
+	case '-':
+		Calc_pole.Format(_T("%f"), a - b);
+		UpdateData(FALSE); a = 0; b = 0; s = 'r';
+		break;
+	case '/':
+		Calc_pole.Format(_T("%f"), a / b);
+		UpdateData(FALSE); a = 0; b = 0; s = 'r';
+		break;
+	case '*':
+		Calc_pole.Format(_T("%f"), a * b);
+		UpdateData(FALSE); a = 0; b = 0; s = '0';
+		break;
+	default:
+		break;
+	}
+}
+
+
+// КРЕСТИКИ / НОЛИКИ
+
+

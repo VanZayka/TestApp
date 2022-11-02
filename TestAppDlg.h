@@ -53,4 +53,8 @@ public:
 	afx_msg void OnBnClickedreset();
 	afx_msg void OnBnClicked10();
 	afx_msg void OnBnClickedp();
+	afx_msg void OnBnClickedresult();
+	afx_msg void OnBnClickedm();
+	afx_msg void OnBnClickedd();
+	afx_msg void OnBnClickedu();
 };
