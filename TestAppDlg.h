@@ -59,4 +59,6 @@ public:
 	afx_msg void OnBnClickedu();
 	afx_msg void OnBnClickedBtnstartgame();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	// Переменная 1й кнопки крестиков
+	CButton ko_1;
 };

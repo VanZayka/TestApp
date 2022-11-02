@@ -17,6 +17,7 @@
 #define IDC_BTN_GTFILEOUT               1005
 #define IDC_BTN_GTPROCESS               1006
 #define IDC_BTN_startgame               1007
+#define IDC_COMMAND1                    1009
 #define b_2                             1010
 #define b_3                             1011
 #define b_4                             1012
@@ -35,14 +36,15 @@
 #define b_reset                         1024
 #define b_10                            1025
 #define b_u2                            1026
+#define IDC_MFCBUTTON1                  1027
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        130
+#define _APS_NEXT_RESOURCE_VALUE        131
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1009
+#define _APS_NEXT_CONTROL_VALUE         1028
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

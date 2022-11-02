@@ -74,6 +74,7 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT_FILEIN, m_sFileIn);
 	DDX_Text(pDX, IDC_EDIT1, Calc_pole);
 	DDX_Text(pDX, IDC_EDIT_FILEOUT, m_sFileOut);
+	DDX_Control(pDX, b_ko_1, ko_1);
 }
 
 BEGIN_MESSAGE_MAP(CMainDlg, CDialogEx)
@@ -356,6 +357,7 @@ void CMainDlg::OnBnClickedBtnstartgame()
 {
 	SetTimer(TIMERCOUNT, 1000, NULL);
 
+	//ko_1.SetWindowText (_T("+"));
 }
 
 
@@ -363,7 +365,10 @@ void CMainDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	if (nIDEvent == TIMERCOUNT)
 	{
-
+		ko_1.SetWindowText(_T("+"));
+		Sleep(500);
+		ko_1.SetWindowText(_T("-"));
+		Sleep(500);
 	}
 	CDialogEx::OnTimer(nIDEvent);
 }
